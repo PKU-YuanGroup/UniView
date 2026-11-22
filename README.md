@@ -1,33 +1,24 @@
-## ___***UniWorld-View: Large-Baseline View Synthesis via Video Diffusion Models***___
+## ___***UniView: Large-Baseline View Synthesis via Video Diffusion Models***___
 <div align="center">
 
- <a href='https://github.com/PKU-YuanGroup/UniWorld-View'><img src='https://img.shields.io/badge/GitHub-UniWorld-View-blue.svg'></a> &nbsp;
+ <a href='https://github.com/PKU-YuanGroup/UniView'><img src='https://img.shields.io/badge/GitHub-UniView-blue.svg'></a> &nbsp;
  <a href='https://huggingface.co/Drexubery/UniView'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a> &nbsp;
  <a href='https://www.hiascend.com/'><img src='https://img.shields.io/badge/Ascend-NPU-red.svg'></a> &nbsp;
 
 </div>
 
-🤗 If you find UniWorld-View useful, **please help ⭐ this repo**, which is important to Open-Source projects. Thanks!
+🤗 If you find UniView useful, **please help ⭐ this repo**, which is important to Open-Source projects. Thanks!
 
-> **This tree (`npu` branch / UniWorld-View) is the Ascend NPU inference port.**  
-> For the original NVIDIA GPU workflow, see the upstream `master` branch or `UniWorld-View_original`.
+> **This tree (`npu` branch / UniView) is the Ascend NPU inference port.**  
+> For the original NVIDIA GPU workflow, see the [main branch](https://github.com/PKU-YuanGroup/UniView/tree/main).
 
 ## 🔆 Introduction
 
-UniWorld-View can generate high-fidelity novel views from <strong>casually captured monocular video</strong> or <strong>single images</strong>, while also supporting highly precise pose control.
+UniView can generate high-fidelity novel views from <strong>casually captured monocular video</strong> or <strong>single images</strong>, while also supporting highly precise pose control.
 
-<!-- Add demo GIFs or images here when available, e.g.:
-<table class="center">
-    <tr style="font-weight: bolder;">
-        <td>Input Video / Image &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Novel View</td>
-    </tr>
-  <tr>
-    <td>
-    <img src=assets/demo.gif style="width: 100%; height: auto;">
-  </td>
-  </tr>
-</table>
--->
+<div align="center">
+  <img src="assets/teaser.jpg" style="max-width: 90%;">
+</div>
 
 For 4D reconstruction, please switch to the `recon` branch (GPU-oriented; not covered by this NPU port).
 
@@ -49,8 +40,8 @@ Ensure no other large jobs (e.g. vLLM) occupy NPU HBM before inference (`npu-smi
 ### 1. Clone this repo
 
 ```bash
-git clone -b npu https://github.com/PKU-YuanGroup/UniWorld-View.git
-cd UniWorld-View
+git clone -b npu https://github.com/PKU-YuanGroup/UniView.git
+cd UniView
 ```
 
 Inference expects the following third-party repos under `extern/`:
@@ -63,7 +54,7 @@ git clone https://github.com/nv-tlabs/vipe.git extern/vipe
 Expected layout:
 
 ```text
-UniWorld-View/
+UniView/
   extern/
     STream3R/
     vipe/
@@ -101,8 +92,8 @@ source /usr/local/Ascend/cann-9.0.0/set_env.sh
 #### 2.2 Python packages
 
 ```bash
-conda create -n uniworld-view python=3.10 -y
-conda activate uniworld-view
+conda create -n uniview python=3.10 -y
+conda activate uniview
 
 # Install PyTorch + torch_npu for your Ascend/CANN version
 # (use the wheel set from Huawei Ascend docs that matches your CANN)
@@ -137,7 +128,7 @@ bash run_infer.sh   # already passes --render_method warp
 
 ### 3. Download pretrained models
 
-By default, UniWorld-View loads weights from `./checkpoints/` (see `checkpoints/README.md`).
+By default, UniView loads weights from `./checkpoints/` (see `checkpoints/README.md`).
 
 #### Option A (recommended): download to local `./checkpoints/`
 
@@ -146,7 +137,7 @@ export HF_ENDPOINT=https://hf-mirror.com
 bash checkpoints/download_hf.sh
 ```
 
-This downloads: UniWorld-View transformer, BLIP2, STream3R, MoGe, SAM2, TracerB7, Video-Depth-Anything, and the default CausVid LoRA `v2`.
+This downloads: UniView transformer, BLIP2, STream3R, MoGe, SAM2, TracerB7, Video-Depth-Anything, and the default CausVid LoRA `v2`.
 
 **Wan2.1-VACE-14B-diffusers is not downloaded by the script** — place it under:
 
@@ -243,11 +234,14 @@ Including but not limited to: [VACE](https://github.com/ali-vilab/VACE), [ViewCr
 If you find this work helpful, please consider citing:
 
 ```BibTeX
-@misc{UniWorld-View2025,
-    author    = {PKU-YuanGroup},
-    title     = {UniWorld-View: Large-Baseline View Synthesis via Video Diffusion Models},
-    year      = {2025},
-    url       = {https://github.com/PKU-YuanGroup/UniWorld-View}
+@misc{zhou2026uniworldviewlargebaselineviewsynthesis,
+      title={UniWorld-View: Large-Baseline View Synthesis via Video Diffusion Models}, 
+      author={Haiyang Zhou and Wangbo Yu and Chaoran Feng and Xunyu Zhou and Yonghong Tian and Li Yuan},
+      year={2026},
+      eprint={2608.04701},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2608.04701}, 
 }
 ```
 
