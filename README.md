@@ -1,29 +1,20 @@
-## ___***UniWorld-View: Large-Baseline View Synthesis via Video Diffusion Models***___
+## ___***UniView: Large-Baseline View Synthesis via Video Diffusion Models***___
 <div align="center">
 
- <a href='https://github.com/PKU-YuanGroup/UniWorld-View'><img src='https://img.shields.io/badge/GitHub-UniWorld-View-blue.svg'></a> &nbsp;
- <a href='https://huggingface.co/Drexubery/UniWorld-View'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a> &nbsp;
+ <a href='https://github.com/PKU-YuanGroup/UniView'><img src='https://img.shields.io/badge/GitHub-UniView-blue.svg'></a> &nbsp;
+ <a href='https://huggingface.co/Drexubery/UniView'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a> &nbsp;
 
 </div>
 
-🤗 If you find UniWorld-View useful, **please help ⭐ this repo**, which is important to Open-Source projects. Thanks!
+🤗 If you find UniView useful, **please help ⭐ this repo**, which is important to Open-Source projects. Thanks!
 
 ## 🔆 Introduction
 
-UniWorld-View can generate high-fidelity novel views from <strong>casually captured monocular video</strong> with precise pose control. UniWorld-View's novel view synthesis capability extends to <strong>Dynamic Scene Reconstruction</strong>. It combines Diffusion-based Novel View Synthesis and 4DGS for 4D reconstruction. 
+UniView can generate high-fidelity novel views from <strong>casually captured monocular video</strong> with precise pose control. UniView's novel view synthesis capability extends to <strong>Dynamic Scene Reconstruction</strong>. It combines Diffusion-based Novel View Synthesis and 4DGS for 4D reconstruction. 
 
-<!-- Add demo GIFs or images here when available, e.g.:
-<table class="center">
-    <tr style="font-weight: bolder;">
-        <td>Input Video / Image &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Novel View</td>
-    </tr>
-  <tr>
-    <td>
-    <img src=assets/demo.gif style="width: 100%; height: auto;">
-  </td>
-  </tr>
-</table>
--->
+<div align="center">
+  <img src="assets/teaser.jpg" style="max-width: 90%;">
+</div>
 
 
 ## ⚙️ Setup
@@ -32,18 +23,18 @@ UniWorld-View can generate high-fidelity novel views from <strong>casually captu
 
 We recommend a GPU with **VRAM ≥ 80GB** for full pipeline of 4D reconstruction.
 
-### 1. Clone UniWorld-View
+### 1. Clone UniView
 
 ```bash
-git clone -b recon https://github.com/PKU-YuanGroup/UniWorld-View.git
-cd UniWorld-View
+git clone -b recon https://github.com/PKU-YuanGroup/UniView.git
+cd UniView
 ```
 
 ### 2. Setup environment
 
 ```bash
-conda create -n uniworld-view-recon python=3.10 -y
-conda activate uniworld-view-recon
+conda create -n uniview-recon python=3.10 -y
+conda activate uniview-recon
 pip install torch==2.4.0+cu121 torchvision==0.19.0+cu121 --index-url https://download.pytorch.org/whl/cu121
 pip install -r requirements.txt
 pip install carvekit --no-deps
@@ -62,7 +53,7 @@ pip install pytorch3d==0.7.8+pt2.4.0cu121 --extra-index-url https://miropsota.gi
 
 ### 3. Download pretrained models
 
-By default, UniWorld-View loads weights from `./checkpoints/` (see `checkpoints/README.md`).
+By default, UniView loads weights from `./checkpoints/` (see `checkpoints/README.md`).
 
 #### (recommended): download to local `./checkpoints/`
 
@@ -70,11 +61,11 @@ By default, UniWorld-View loads weights from `./checkpoints/` (see `checkpoints/
 bash checkpoints/download_hf.sh
 ```
 
-This downloads: UniWorld-View transformer, Wan2.1-VACE, BLIP2, STream3R, MoGe, SAM2, TracerB7, Video-Depth-Anything, ROSE, MoSca and optional LoRA (see `checkpoints/README.md`).
+This downloads: UniView transformer, Wan2.1-VACE, BLIP2, STream3R, MoGe, SAM2, TracerB7, Video-Depth-Anything, ROSE, MoSca and optional LoRA (see `checkpoints/README.md`).
 
 ## 💫 Inference
 
-Run from the **repo root** (`UniWorld-View/`).
+Run from the **repo root** (`UniView/`).
 
 ### 1. Command line
 
@@ -97,11 +88,14 @@ Including but not limited to: [CogVideo-Fun](https://github.com/aigc-apps/CogVid
 If you find this work helpful, please consider citing:
 
 ```BibTeX
-@misc{UniWorld-View2025,
-    author    = {PKU-YuanGroup},
-    title     = {UniWorld-View: Large-Baseline View Synthesis via Video Diffusion Models},
-    year      = {2025},
-    url       = {https://github.com/PKU-YuanGroup/UniWorld-View}
+@misc{zhou2026uniworldviewlargebaselineviewsynthesis,
+      title={UniWorld-View: Large-Baseline View Synthesis via Video Diffusion Models}, 
+      author={Haiyang Zhou and Wangbo Yu and Chaoran Feng and Xunyu Zhou and Yonghong Tian and Li Yuan},
+      year={2026},
+      eprint={2608.04701},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2608.04701}, 
 }
 ```
 
