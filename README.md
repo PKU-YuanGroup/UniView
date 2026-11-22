@@ -1,4 +1,4 @@
-## ___***UniWorld-View: Large-Baseline View Synthesis via Video Diffusion Models***___
+## ___***UniView: Large-Baseline View Synthesis via Video Diffusion Models***___
 <div align="center">
 <img src='assets/logo-title.png' style="height:100px"></img>
 
@@ -9,14 +9,14 @@
 
 </div>
 
-🤗 If you find UniWorld-View useful, **please help ⭐ this repo**, which is important to Open-Source projects. Thanks!
+🤗 If you find UniView useful, **please help ⭐ this repo**, which is important to Open-Source projects. Thanks!
 
 ## 🔥🔥🔥 Latest News
-- 🎉 Jul, 2026: UniWorld-View ranked **1st** on the [WorldScore](https://huggingface.co/spaces/Howieeeee/WorldScore_Leaderboard) Leaderboard (by Stanford Prof. Fei-Fei Li's Team)
+- 🎉 Jul, 2026: UniView ranked **1st** on the [WorldScore](https://huggingface.co/spaces/Howieeeee/WorldScore_Leaderboard) Leaderboard (by Stanford Prof. Fei-Fei Li's Team)
 
 ## 🔆 Introduction
 
-UniWorld-View can generate high-fidelity novel views from <strong>casually captured monocular video</strong> or <strong>single images</strong>, while also supporting highly precise pose control. 
+UniView can generate high-fidelity novel views from <strong>casually captured monocular video</strong> or <strong>single images</strong>, while also supporting highly precise pose control. 
 
 <div align="center">
   <img src="assets/teaser.jpg" style="max-width: 90%;">
@@ -35,8 +35,8 @@ We recommend a GPU with **VRAM ≥ 60GB** for smooth inference.
 ### 1. Clone this repo
 
 ```bash
-git clone https://github.com/PKU-YuanGroup/UniWorld-View.git
-cd UniWorld-View
+git clone https://github.com/PKU-YuanGroup/UniView.git
+cd UniView
 ```
 
 Inference expects the following third-party repos to exist under `extern/`:
@@ -48,8 +48,8 @@ git clone https://github.com/NIRVANALAN/STream3R.git extern/STream3R
 ### 2. Setup environment
 
 ```bash
-conda create -n uniworld-view python=3.10 -y
-conda activate uniworld-view
+conda create -n uniview python=3.10 -y
+conda activate uniview
 pip install torch==2.4.0+cu124 torchvision==0.19.0+cu124 --index-url https://download.pytorch.org/whl/cu124
 pip install -r requirements.txt
 pip install carvekit --no-deps
@@ -74,7 +74,7 @@ pip install --no-build-isolation extern/MoSca/lib_render/diff-gaussian-rasteriza
 pip install --no-build-isolation extern/MoSca/lib_render/diff-gaussian-rasterization-alphadep
 ```
 
-By default, UniWorld-View loads weights from `./checkpoints/` (see `checkpoints/README.md`).
+By default, UniView loads weights from `./checkpoints/` (see `checkpoints/README.md`).
 
 #### Option A (recommended): download to local `./checkpoints/`
 
@@ -82,7 +82,7 @@ By default, UniWorld-View loads weights from `./checkpoints/` (see `checkpoints/
 bash checkpoints/download_hf.sh
 ```
 
-This downloads: UniWorld-View transformer, Wan2.1-VACE, BLIP2, MoGe, SAM2, TracerB7, and the default CausVid LoRA `v2`.
+This downloads: UniView transformer, Wan2.1-VACE, BLIP2, MoGe, SAM2, TracerB7, and the default CausVid LoRA `v2`.
 Pass the optional `--mosca` or `--stream3r` argument to additionally download the corresponding pose / depth-estimation model. See `checkpoints/README.md` for download-script details.
 
 #### Option B: load from Hugging Face Hub (cache)
@@ -91,7 +91,7 @@ Run inference with `--no_load_weights_locally` and override repo IDs via environ
 
 ## 💫 Inference
 
-Run from the **repo root** (`UniWorld-View/`).
+Run from the **repo root** (`UniView/`).
 
 ### 1. Command line
 
