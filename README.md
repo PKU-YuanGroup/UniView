@@ -3,7 +3,6 @@
 
  <a href='https://arxiv.org/abs/2608.04701'><img src='https://img.shields.io/badge/arXiv-2608.04701-b31b1b.svg'></a> &nbsp;
  <a href='https://zhouhyocean.github.io/uniworld-view/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;
- <a href='https://www.youtube.com/watch?v=ngqF_-NxFy0'><img src='https://img.shields.io/badge/Youtube-Video-b31b1b.svg'></a>&nbsp;
  <a href='https://huggingface.co/Drexubery/UniView'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a> &nbsp;
 
 </div>
