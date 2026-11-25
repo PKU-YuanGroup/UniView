@@ -234,14 +234,14 @@ Including but not limited to: [VACE](https://github.com/ali-vilab/VACE), [ViewCr
 If you find this work helpful, please consider citing:
 
 ```BibTeX
-@misc{zhou2026uniworldviewlargebaselineviewsynthesis,
-      title={UniWorld-View: Large-Baseline View Synthesis via Video Diffusion Models}, 
-      author={Haiyang Zhou and Wangbo Yu and Chaoran Feng and Xunyu Zhou and Yonghong Tian and Li Yuan},
+@misc{yu2026univiewlargebaselineviewsynthesis,
+      title={UniView: Large-Baseline View Synthesis via Video Diffusion Models},
+      author={Wangbo Yu and Haiyang Zhou and Chaoran Feng and Xunyu Zhou and Li Yuan},
       year={2026},
       eprint={2608.04701},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2608.04701}, 
+      url={https://arxiv.org/abs/2608.04701},
 }
 ```
 
